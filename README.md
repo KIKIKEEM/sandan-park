@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 산단파크 (SANDAN PARK)
 
-## Getting Started
+> 산업단지에서 산다. 레벨업하며 산다.
+> 산단 청년 근로자의 외로움을 온·오프 믹스 RPG로 전환하는 게이미피케이션 플랫폼.
 
-First, run the development server:
+## 📱 프로토타입 실행
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+브라우저에서 http://localhost:3000 (또는 3001) 접속. **모바일 크기로 열어야 가장 잘 보입니다** (480px 기준 최적화).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+빌드:
+```bash
+npm run build
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📄 문서
 
-## Learn More
+| 파일 | 용도 |
+|---|---|
+| [PRD.md](PRD.md) | 제품 요구사항 (심사기준 100점 매칭) |
+| [PITCH.md](PITCH.md) | 5분 발표 대본 + 전략 |
+| [VISUAL_PROMPT.md](VISUAL_PROMPT.md) | 16:9 키비주얼 프롬프트 (Midjourney/DALL-E) |
 
-To learn more about Next.js, take a look at the following resources:
+## 🗺️ 페이지 구조
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| 경로 | 설명 |
+|---|---|
+| `/` | 홈 — 퀘스트 대시보드, SDC 잔액, 레벨, 주간 미션 |
+| `/map` | 산단 RPG 맵 — 어트랙션 핀, 바텀시트 |
+| `/tribe` | 트라이브 — 온라인 빌리지, 내 부족, 전국 랭킹 |
+| `/profile` | 프로필 — 캐릭터, 뱃지, Before→After 진입 |
+| `/profile/story` | Before → After 스토리 (발표 킬링파트) |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎨 디자인 톤
+- 모바일 퍼스트 (480px 고정)
+- 다크 테마, glass morphism
+- Brand: Emerald `#22C55E` · Purple `#A855F7` · Gold `#FACC15`
+- 감성: 배틀그라운드 맵의 삭막함 + 포켓몬GO의 탐험감 + 당근마켓의 따뜻함
 
-## Deploy on Vercel
+## 🧰 스택
+- Next.js 16 (App Router)
+- Tailwind CSS v4
+- Lucide React (아이콘)
+- TypeScript
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🚀 배포
+Vercel에 바로 배포 가능:
+```bash
+npx vercel
+```

@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0B1020;
+  --foreground: #F5F7FB;
+  --brand: #22C55E;
+  --brand-2: #A855F7;
+  --brand-3: #FACC15;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand: var(--brand);
+  --color-brand-2: var(--brand-2);
+  --color-brand-3: var(--brand-3);
+  --font-sans: "Pretendard", "Apple SD Gothic Neo", -apple-system, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
+html, body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
 }
+
+button { cursor: pointer; }
+
+@keyframes pop {
+  0% { transform: scale(0.6); opacity: 0; }
+  60% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.anim-pop { animation: pop 400ms cubic-bezier(.2,.8,.2,1) both; }
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.anim-float { animation: floatY 2.4s ease-in-out infinite; }
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+  50% { box-shadow: 0 0 0 16px rgba(34,197,94,0); }
+}
+.anim-glow { animation: pulseGlow 2s infinite; }
+
+@keyframes coinRise {
+  0% { transform: translate(-50%, 0) scale(0.6); opacity: 0; }
+  20% { transform: translate(-50%, -10px) scale(1.1); opacity: 1; }
+  100% { transform: translate(-50%, -80px) scale(1); opacity: 0; }
+}
+.anim-coin { animation: coinRise 900ms ease-out both; }
+
+.glass {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.gradient-bg {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(34,197,94,0.22), transparent 40%),
+    radial-gradient(circle at 90% 20%, rgba(168,85,247,0.22), transparent 40%),
+    radial-gradient(circle at 50% 100%, rgba(250,204,21,0.18), transparent 40%),
+    linear-gradient(180deg, #0B1020 0%, #0E0B1E 100%);
+}
+
+.noise {
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0 1px, transparent 1px 3px);
+}
+
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { scrollbar-width: none; }
