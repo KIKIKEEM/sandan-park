@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import BottomNav from "@/components/BottomNav";
+import AppFrame from "@/components/AppFrame";
 
 export const metadata: Metadata = {
   title: "산단파크 — 내 삶을 레벨업하는 산업단지",
@@ -22,9 +23,7 @@ export default function RootLayout({
   return (
     <html lang="ko" className="h-full antialiased">
       <body className="min-h-full gradient-bg">
-        <div className="mx-auto max-w-[480px] min-h-screen relative pb-20">
-          {children}
-        </div>
+        <AppFrame>{children}</AppFrame>
         <BottomNav />
       </body>
     </html>

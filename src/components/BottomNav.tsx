@@ -13,6 +13,7 @@ const items = [
 
 export default function BottomNav() {
   const pathname = usePathname();
+  if (pathname?.startsWith("/slides")) return null;
   return (
     <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] z-50">
       <div className="glass border-t border-white/10 flex items-center justify-around px-2 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))]">
