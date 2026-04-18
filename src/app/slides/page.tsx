@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, Maximize2, Printer, LayoutGrid } from "lucide-react";
+import { ChevronLeft, ChevronRight, Maximize2, Printer, LayoutGrid, Download } from "lucide-react";
 import "./slides.css";
 import { slides } from "./SlideContent";
 
@@ -144,6 +144,15 @@ export default function SlidesPage() {
         >
           <Printer size={14} />
         </button>
+        <a
+          href="/sandan-park.pptx"
+          download="sandan-park.pptx"
+          aria-label="PPT 다운로드"
+          title="PPT 다운로드"
+          className="w-7 h-7 rounded-full bg-yellow-400/20 text-yellow-300 border border-yellow-400/40 flex items-center justify-center hover:bg-yellow-400/30"
+        >
+          <Download size={13} />
+        </a>
       </div>
     </div>
   );

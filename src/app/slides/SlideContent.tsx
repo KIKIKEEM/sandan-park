@@ -192,37 +192,33 @@ export const slides: SlideMeta[] = [
     id: "demo-home",
     title: "데모: 홈",
     render: () => (
-      <div className="slide-content flex-row gap-8">
-        <div className="flex-1 flex flex-col justify-center">
+      <div className="demo-row">
+        <div className="demo-text">
           <div className="slide-tag">03 · 솔루션 데모</div>
           <div className="h-big mt-4 leading-tight">홈 대시보드</div>
           <div className="t-lead mt-4">
             오늘의 <b className="text-yellow-300">SDC</b> · 레벨 링 · 주간 미션 프로그레스.
           </div>
-          <div className="mt-5 space-y-2">
+          <div className="mt-4 space-y-1.5">
             {[
               "🌅 7시 기상 인증 → +10 SDC",
               "🥗 건강식 인증 → +15 SDC",
               "🚶 걸어서 출근 → 스텝당 +1",
               "🌿 플로깅 → +30 SDC",
             ].map((q) => (
-              <div key={q} className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-sm">
+              <div key={q} className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-[0.9rem]">
                 {q}
               </div>
             ))}
           </div>
-          <div className="t-small mt-4">
+          <div className="t-small mt-3">
             완료 버튼 한 번 → 코인 팝업 애니메이션
           </div>
         </div>
-
-        <div className="w-[38%] flex items-center justify-center">
-          <iframe
-            src="/"
-            className="rounded-[28px] border-8 border-slate-800 shadow-2xl"
-            style={{ width: "320px", height: "640px", background: "#0B1020" }}
-            title="산단파크 홈"
-          />
+        <div className="demo-phone-wrap">
+          <div className="demo-phone">
+            <iframe src="/" title="산단파크 홈" />
+          </div>
         </div>
       </div>
     ),
@@ -233,8 +229,8 @@ export const slides: SlideMeta[] = [
     id: "demo-map",
     title: "데모: 산단 맵",
     render: () => (
-      <div className="slide-content flex-row gap-8">
-        <div className="flex-1 flex flex-col justify-center">
+      <div className="demo-row">
+        <div className="demo-text">
           <div className="slide-tag">03 · 솔루션 데모</div>
           <div className="h-big mt-4 leading-tight">산단 RPG 맵</div>
           <div className="t-lead mt-4">
@@ -242,26 +238,22 @@ export const slides: SlideMeta[] = [
             핀을 탭하면 참여·보상·거리 정보가 바로 뜬다.
           </div>
 
-          <div className="grid grid-cols-2 gap-2 mt-5">
+          <div className="grid grid-cols-2 gap-2 mt-4">
             {attractions.slice(0, 6).map((a) => (
-              <div key={a.id} className="px-2.5 py-2 rounded-lg bg-white/5 border border-white/10 text-xs flex items-center gap-2">
-                <span className="text-lg">{a.emoji}</span>
+              <div key={a.id} className="px-2.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs flex items-center gap-2">
+                <span className="text-base">{a.emoji}</span>
                 <span className="truncate">{a.name}</span>
               </div>
             ))}
           </div>
-          <div className="t-small mt-4">
+          <div className="t-small mt-3">
             7가지 어트랙션 · 실시간 참여자 수 · 경로 안내
           </div>
         </div>
-
-        <div className="w-[38%] flex items-center justify-center">
-          <iframe
-            src="/map"
-            className="rounded-[28px] border-8 border-slate-800 shadow-2xl"
-            style={{ width: "320px", height: "640px", background: "#0B1020" }}
-            title="산단파크 맵"
-          />
+        <div className="demo-phone-wrap">
+          <div className="demo-phone">
+            <iframe src="/map" title="산단파크 맵" />
+          </div>
         </div>
       </div>
     ),
@@ -272,8 +264,8 @@ export const slides: SlideMeta[] = [
     id: "demo-tribe",
     title: "데모: 트라이브",
     render: () => (
-      <div className="slide-content flex-row gap-8">
-        <div className="flex-1 flex flex-col justify-center">
+      <div className="demo-row">
+        <div className="demo-text">
           <div className="slide-tag">03 · 솔루션 데모</div>
           <div className="h-big mt-4 leading-tight">
             트라이브<br />
@@ -284,15 +276,15 @@ export const slides: SlideMeta[] = [
             <b className="text-white"> 전국 산단 명량운동회</b>로 경쟁·연결.
           </div>
 
-          <div className="mt-5 card-glass p-4">
+          <div className="mt-4 card-glass p-3.5">
             <div className="text-[11px] text-orange-300 mb-2">🔥 LIVE · 전국 산단 명량운동회</div>
-            <div className="space-y-1.5 text-sm">
+            <div className="space-y-1 text-[0.85rem]">
               {[
                 { r: 1, n: "창원 새벽러너스", s: 12450 },
                 { r: 2, n: "완주 쿠킹메이트", s: 11280 },
                 { r: 3, n: "구미 수요러너스 👑", s: 10920, me: true },
               ].map((l) => (
-                <div key={l.r} className={`flex justify-between px-2 py-1.5 rounded ${l.me ? "bg-yellow-400/20 border border-yellow-400/40" : ""}`}>
+                <div key={l.r} className={`flex justify-between px-2 py-1 rounded ${l.me ? "bg-yellow-400/20 border border-yellow-400/40" : ""}`}>
                   <span>#{l.r} {l.n}</span>
                   <span className="text-yellow-300 font-bold tabular-nums">{l.s.toLocaleString()}</span>
                 </div>
@@ -300,14 +292,10 @@ export const slides: SlideMeta[] = [
             </div>
           </div>
         </div>
-
-        <div className="w-[38%] flex items-center justify-center">
-          <iframe
-            src="/tribe"
-            className="rounded-[28px] border-8 border-slate-800 shadow-2xl"
-            style={{ width: "320px", height: "640px", background: "#0B1020" }}
-            title="산단파크 트라이브"
-          />
+        <div className="demo-phone-wrap">
+          <div className="demo-phone">
+            <iframe src="/tribe" title="산단파크 트라이브" />
+          </div>
         </div>
       </div>
     ),

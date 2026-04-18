@@ -111,6 +111,47 @@
   backdrop-filter: blur(8px);
 }
 
+/* 데모 슬라이드 — 좌측 텍스트 + 우측 폰 목업, 슬라이드 비율에 맞춰 반응 */
+.demo-row {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 4%;
+  padding: 4% 5%;
+}
+.demo-row > .demo-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.demo-row > .demo-phone-wrap {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.demo-phone {
+  height: 100%;
+  aspect-ratio: 9 / 18;
+  border-radius: clamp(14px, 2vw, 28px);
+  border: 6px solid #0f172a;
+  overflow: hidden;
+  box-shadow: 0 24px 48px -12px rgba(0,0,0,0.6);
+  background: #0B1020;
+  position: relative;
+}
+.demo-phone iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
 @media print {
   body { background: white !important; }
   .slide-root { position: static; background: white; }
